@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../assets/JanithLiaya1.png';
 import { FaFacebookF,FaLinkedin, FaTwitter  } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -15,10 +16,46 @@ function Navbar() {
         </div>
         <div className='flex justify-center items-center bg-[#1C1C1C] h-10'>
             <ul className='flex flex-row space-x-10 text-slate-50'>
-                <li>Home</li>
-                <li>Chemistry</li>
-                <li>Business</li>
-                <li>About me</li>
+                <li className='cursor-pointer'>
+                <NavLink
+                    to='/'
+                    className={ ({isActive}) => 
+                        isActive ? 'text-[#E63946]' : 'hover:text-[#E63946]'
+                    }
+                >
+                    Home
+                </NavLink>
+                </li>
+                <li className='cursor-pointer'>
+                <NavLink
+                    to='/class'
+                    className={({ isActive }) => 
+                    isActive ? 'text-[#E63946]' : 'hover:text-[#E63946]'
+                    }
+                >
+                    Chemistry
+                </NavLink>
+                </li>
+                <li className='cursor-pointer'>
+                <NavLink
+                    to='/businesses'
+                    className={({ isActive }) => 
+                    isActive ? 'text-[#E63946]' : 'hover:text-[#E63946]'
+                    }
+                >
+                    Business
+                </NavLink>
+                </li>
+                <li className='cursor-pointer'>
+                <NavLink
+                    to='/aboutme'
+                    className={({ isActive }) => 
+                    isActive ? 'text-[#E63946]' : 'hover:text-[#E63946]'
+                    }
+                >
+                    About me
+                </NavLink>
+                </li>
             </ul>
         </div>
     </>
